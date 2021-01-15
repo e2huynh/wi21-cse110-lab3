@@ -30,8 +30,8 @@
         
         <section id="CODE">
             <h3><span>This section is the code section</span></h3>
-            <code>
-                <pre>
+            <pre>
+                <code>
 void HCTree::build(vector<unsigned char>& rep, unordered_set<int> symbolIndex) {
     queue<int> q; //q and nodes are parallel queues
     queue<HCNode*> nodes;
@@ -51,7 +51,7 @@ void HCTree::build(vector<unsigned char>& rep, unordered_set<int> symbolIndex) {
         if(symbolIndex.count(index))
             leaves[rep[index]] = temp;
 
-        if(index * 2 < rep.size()) {
+        if(index * 2 &lt rep.size()) {
             temp -> c0 = new HCNode();
             temp -> c0 -> symbol = rep[index*2];
             temp -> c0 -> p = temp;
@@ -60,7 +60,7 @@ void HCTree::build(vector<unsigned char>& rep, unordered_set<int> symbolIndex) {
             nodes.push(temp -> c0);
         }
 
-        if(index*2 + 1 < rep.size()) {
+        if(index*2 + 1 &lt rep.size()) {
             temp -> c1 = new HCNode();
             temp -> c1 -> symbol = rep[index*2 + 1];
             temp -> c1 -> p = temp;
@@ -92,8 +92,9 @@ void HCTree::build(vector<unsigned char>& rep, unordered_set<int> symbolIndex) {
         }
     }
 }
-                </pre>
-            </code>
+                
+                </code>
+            </pre>
         </section>
 
         <div>
@@ -113,24 +114,26 @@ void HCTree::build(vector<unsigned char>& rep, unordered_set<int> symbolIndex) {
                 <li>Pepperoni</li>
                 <li>Bacon</li>
             </ul>
-            <picture>
-                <table>
-                    <caption>For reference:</caption>
-                    <colgroup>
-                        <col span="3">
-                    </colgroup>
-                    <tr>
-                        <th>Jalapeno</th>
-                        <th>Pepperoni</th>
-                        <th>Bacon</th>
-                    </tr>
-                    <tr>
+            
+            <table>
+                <caption>For reference:</caption>
+                <colgroup>
+                    <col span="3">
+                </colgroup>
+                <tr>
+                    <th>Jalapeno</th>
+                    <th>Pepperoni</th>
+                    <th>Bacon</th>
+                </tr>
+                <tr>
+                    <picture>
                         <td><img src="images/jalapeno.jpg" alt="Jalapeno"></td>
                         <td><img src="images/pepperoni.jpg" alt="Pepperoni"></td>
                         <td><img src="images/bacon.jpg" alt="Bacon"></td>
-                    </tr>
-                </table>
-            </picture>
+                    </picture>
+                </tr>
+            </table>
+            
 
             <p>Best pizza places</p>
             <ol start="1">
