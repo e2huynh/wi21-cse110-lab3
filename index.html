@@ -32,7 +32,7 @@
             <h3><span>This section is the code section</span></h3>
             <pre>
                 <code>
-void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set<int> symbolIndex) {
+void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; symbolIndex) {
     queue<int> q; //q and nodes are parallel queues
     queue<HCNode*> nodes;
     root = new HCNode();
@@ -126,11 +126,9 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set<int> symbolIn
                     <th>Bacon</th>
                 </tr>
                 <tr>
-                    <picture>
-                        <td><img src="images/jalapeno.jpg" alt="Jalapeno"></td>
-                        <td><img src="images/pepperoni.jpg" alt="Pepperoni"></td>
-                        <td><img src="images/bacon.jpg" alt="Bacon"></td>
-                    </picture>
+                    <td><img src="images/jalapeno.jpg" alt="Jalapeno"></td>
+                    <td><img src="images/pepperoni.jpg" alt="Pepperoni"></td>
+                    <td><img src="images/bacon.jpg" alt="Bacon"></td>
                 </tr>
             </table>
             
@@ -185,16 +183,18 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set<int> symbolIn
         <hr>
         <section id="SHAPES">
             <h2>Shapes section</h2>
-            <canvas id="rectangle"></canvas>
-            <script>
-                var can = document.getElementById("rectangle");
-                var canvas = can.getContext("2d");
-                canvas.fillStyle = "#000000";
-                canvas.fillRect(0,0,80,80);
-            </script>
-            <svg width="100" height="100">
-                <circle cx="25" cy="25" r="23" stroke="black" stroke-width="2" fill="red"/>
-            </svg>
+            <picture>
+                <canvas id="rectangle"></canvas>
+                <script>
+                    var can = document.getElementById("rectangle");
+                    var canvas = can.getContext("2d");
+                    canvas.fillStyle = "#000000";
+                    canvas.fillRect(0,0,80,80);
+                </script>
+                <svg width="100" height="100">
+                    <circle cx="25" cy="25" r="23" stroke="black" stroke-width="2" fill="red"/>
+                </svg>
+            </picture>
         </section>
         
         <hr>
