@@ -33,10 +33,10 @@
             <pre>
                 <code>
 void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; symbolIndex) {
-    queue<int> q; //q and nodes are parallel queues
-    queue<HCNode*> nodes;
+    queue&lt;int&gt; q; //q and nodes are parallel queues
+    queue&lt;HCNode*&gt; nodes;
     root = new HCNode();
-    root -> symbol = rep[1];
+    root -&gt; symbol = rep[1];
     q.push(1);
     nodes.push(root);
 
@@ -52,21 +52,21 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; sy
             leaves[rep[index]] = temp;
 
         if(index * 2 &lt; rep.size()) {
-            temp -> c0 = new HCNode();
-            temp -> c0 -> symbol = rep[index*2];
-            temp -> c0 -> p = temp;
+            temp -&gt; c0 = new HCNode();
+            temp -&gt; c0 -&gt; symbol = rep[index*2];
+            temp -&gt; c0 -&gt; p = temp;
 
             q.push(index*2);
-            nodes.push(temp -> c0);
+            nodes.push(temp -&gt; c0);
         }
 
         if(index*2 + 1 &lt; rep.size()) {
-            temp -> c1 = new HCNode();
-            temp -> c1 -> symbol = rep[index*2 + 1];
-            temp -> c1 -> p = temp;
+            temp -&gt; c1 = new HCNode();
+            temp -&gt; c1 -&gt; symbol = rep[index*2 + 1];
+            temp -&gt; c1 -&gt; p = temp;
 
             q.push(index*2 + 1);
-            nodes.push(temp -> c1);
+            nodes.push(temp -&gt; c1);
         }
     }
     
@@ -74,21 +74,21 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; sy
     for(HCNode* l : leaves) {
         if(l) {
             string binaryCode = "";
-            HCNode* curr = l -> p;
+            HCNode* curr = l -&gt; p;
             HCNode* prev = l;
 
             while(curr) {
                 //if prev is the right child of curr
-                if(curr -> c1 == prev)
+                if(curr -&gt; c1 == prev)
                     binaryCode = "1" + binaryCode;
                 else
                     binaryCode = "0" + binaryCode;
 
                 prev = curr;
-                curr = curr -> p;
+                curr = curr -&gt; p;
             }
 
-            binaryMap[binaryCode] = l -> symbol; //use map for decoding because we search for encodings a lot
+            binaryMap[binaryCode] = l -&gt; symbol; //use map for decoding because we search for encodings a lot
         }
     }
 }
@@ -183,18 +183,16 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; sy
         <hr>
         <section id="SHAPES">
             <h2>Shapes section</h2>
-            <picture>
-                <canvas id="rectangle"></canvas>
-                <script>
-                    var can = document.getElementById("rectangle");
-                    var canvas = can.getContext("2d");
-                    canvas.fillStyle = "#000000";
-                    canvas.fillRect(0,0,80,80);
-                </script>
-                <svg width="100" height="100">
-                    <circle cx="25" cy="25" r="23" stroke="black" stroke-width="2" fill="red"/>
-                </svg>
-            </picture>
+            <canvas id="rectangle"></canvas>
+            <script>
+                var can = document.getElementById("rectangle");
+                var canvas = can.getContext("2d");
+                canvas.fillStyle = "#000000";
+                canvas.fillRect(0,0,80,80);
+            </script>
+            <svg width="100" height="100">
+                <circle cx="25" cy="25" r="23" stroke="black" stroke-width="2" fill="red"/>
+            </svg>
         </section>
         
         <hr>
