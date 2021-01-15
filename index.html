@@ -32,7 +32,7 @@
             <h3><span>This section is the code section</span></h3>
             <pre>
                 <code>
-void HCTree::build(vector<unsigned char>& rep, unordered_set<int> symbolIndex) {
+void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set<int> symbolIndex) {
     queue<int> q; //q and nodes are parallel queues
     queue<HCNode*> nodes;
     root = new HCNode();
@@ -51,7 +51,7 @@ void HCTree::build(vector<unsigned char>& rep, unordered_set<int> symbolIndex) {
         if(symbolIndex.count(index))
             leaves[rep[index]] = temp;
 
-        if(index * 2 &lt rep.size()) {
+        if(index * 2 &lt; rep.size()) {
             temp -> c0 = new HCNode();
             temp -> c0 -> symbol = rep[index*2];
             temp -> c0 -> p = temp;
@@ -60,7 +60,7 @@ void HCTree::build(vector<unsigned char>& rep, unordered_set<int> symbolIndex) {
             nodes.push(temp -> c0);
         }
 
-        if(index*2 + 1 &lt rep.size()) {
+        if(index*2 + 1 &lt; rep.size()) {
             temp -> c1 = new HCNode();
             temp -> c1 -> symbol = rep[index*2 + 1];
             temp -> c1 -> p = temp;
