@@ -21,6 +21,10 @@ nav {
     text-decoration: underline;
 }
 
+button {
+    color: hsl(154, 100%, 50%);
+}
+
 #JAM {
     background-color: rgba(0, 0, 0, 1);
     height: 100%;
