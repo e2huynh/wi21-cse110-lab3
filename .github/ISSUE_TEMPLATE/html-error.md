@@ -1,8 +1,8 @@
 ---
-name: CSS error
+name: HTML error
 about: Create a report to help us improve
-title: CSS error
-labels: bug
+title: HTML error
+labels: bug, html
 assignees: e2huynh
 
 ---
