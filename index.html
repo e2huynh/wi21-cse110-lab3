@@ -20,12 +20,12 @@
     <body>
         <main>
             <header>
-                <a href="https://e2huynh.github.io" style="font-size: 20px;">My Markdown page</a>
+                <a target="highlight" href="https://e2huynh.github.io" style="font-size: 20px;">My Markdown page</a>
                 <br>
                 <iframe src="https://e2huynh.github.io" title="Markdown Page Preview"></iframe>
-                <h1>BIG HEADER</h1>
-                <h2>Medium Header</h2>
-                <h3>small header</h3>
+                <h1 class="header">BIG HEADER</h1>
+                <h2 class="header">Medium Header</h2>
+                <h3 class="header">small header</h3>
                 <nav>
                     <a href="#CODE">Code Section</a> |
                     <a href="#PIZZA">Pizza Section</a> |
@@ -37,7 +37,7 @@
         </main>
         
         <section id="CODE">
-            <h3><span>This section is the code section</span></h3>
+            <h3 class="header"><span>This section is the code section</span></h3>
             <pre>
                 <code>
 void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; symbolIndex) {
@@ -111,7 +111,7 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; sy
         </div>
 
         <section id="PIZZA">
-            <h3><span>This section is the pizza section</span></h3>
+            <h3 class="header"><span>This section is the pizza section</span></h3>
 
             <p><em>Note: This is my opinion</em></p>
 
@@ -150,7 +150,7 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; sy
             <p>Costco pizza:</p>
             <figure>
                 <img src="images/costco_pizza.jpg" alt="Costco Pizza">
-                <figcaption><b>WOW LOOK AT THAT PIZZA</b></figcaption>
+                <figcaption style="text-align: center;"><b>WOW LOOK AT THAT PIZZA</b></figcaption>
             </figure>
             
             <details>
@@ -174,23 +174,26 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; sy
                 }
             </script>
             <template>
-                <h2>START JAMMING</h2>
-                <picture>
-                    <img src="images/catjam.gif" height="80" width="80" alt="catJAM">
-                </picture>
-                <br><video width="1280" height="720" controls>
-                    <source src="videos/dance.mp4" type="video/mp4">
-                </video>
-                <br><button type="button" onclick="location.href='https://e2huynh.github.io/e2huynh-html'">Go Back</button>
+                <section id="JAM">
+                    <h2 style="color: #f5f; text-align: center;">START JAMMING</h2>
+                    <picture>
+                        <img id="CAT" src="images/catjam.gif" alt="catJAM">
+                    </picture>
+                    <br><video id="DANCE" width="1280" height="720" controls>
+                        <source src="videos/dance.mp4" type="video/mp4">
+                    </video>
+                    <br><button type="button" onclick="location.href='https://e2huynh.github.io/wi21-cse110-lab3/'">Go Back</button>
+                </section>
             </template>
-            <hr>
         </section>
 
+        <hr>
+        <p>And now a message from our sponsors:</p>
         <audio controls>
             <source src="audio/surprise.mp3" type="audio/mp3">
         </audio>
-
         <hr>
+
         <section id="SHAPES">
             <h2>Shapes section</h2>
             <canvas id="rectangle"></canvas>
@@ -210,7 +213,7 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; sy
         <section id="FORM">
             <h2>Tell us your experience on this website:</h2>
             <form>
-                <fieldset>
+                <fieldset style="color: #354bff;">
                     <legend style="color:blue; font-weight: bold;">Not going to sell your information</legend>
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name">
@@ -269,13 +272,13 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; sy
                         <option value="MIT">
                     </datalist>
 
-                    <br><br><br><input type="submit" value="Submit">
+                    <br><br><br><input style="color: hsla(301, 100%, 50%, 1);" type="submit" value="Submit">
                 </fieldset>
             </form>
             
         </section>
         <footer>
-            <p>Contact me:<br><a href="mailto:e2huynh@ucsd.edu">e2huynh@ucsd.edu</a></p>
+            <p>Contact me:<br><a target="highlight" href="mailto:e2huynh@ucsd.edu">e2huynh@ucsd.edu</a></p>
         </footer>
     </body>
 </html>
