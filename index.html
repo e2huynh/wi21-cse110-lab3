@@ -6,12 +6,21 @@
         <meta name="keywords" content="HTML, Ethan Huynh, GitHub">
         <meta name="author" content="Ethan Huynh">
         <link rel="stylesheet" href="stylesheet.css">
+        <style>
+            code {
+                font-size: 14px;
+            }
+            iframe {
+                width: 100%;
+                height: 640px;
+            }
+        </style>
     </head>
 
     <body>
         <main>
             <header>
-                <a href="https://e2huynh.github.io">My Markdown page</a>
+                <a href="https://e2huynh.github.io" style="font-size: 20px;">My Markdown page</a>
                 <br>
                 <iframe src="https://e2huynh.github.io" title="Markdown Page Preview"></iframe>
                 <h1>BIG HEADER</h1>
@@ -24,7 +33,6 @@
                     <a href="#SHAPES">Shapes Section</a> |
                     <a href="#FORM">How was your experience?</a>
                 </nav>
-                
             </header>
         </main>
         
@@ -91,8 +99,7 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; sy
             binaryMap[binaryCode] = l -&gt; symbol; //use map for decoding because we search for encodings a lot
         }
     }
-}
-                
+}        
                 </code>
             </pre>
         </section>
@@ -204,7 +211,7 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; sy
             <h2>Tell us your experience on this website:</h2>
             <form>
                 <fieldset>
-                    <legend>Not going to sell your information</legend>
+                    <legend style="color:blue; font-weight: bold;">Not going to sell your information</legend>
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name">
                     <label for="ssn">Social Security #:</label>
