@@ -1,5 +1,46 @@
+/*Ethan Huynh's css stylesheet for CSE 110 WI2020 Lab 3*/
+
+/*Define the height of the entire page*/
+html {
+    height: 100%;
+}
+
+* {
+    background-color: rgb(214, 203, 203);
+}
+
 nav {
     text-align: center;
     font-size: 36px;
     font-weight: bolder;
+}
+
+.header {
+    text-align: center;
+    color: red;
+    text-decoration: underline;
+}
+
+#JAM {
+    background-color: rgba(0, 0, 0, 1);
+    height: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
+#CAT {
+    width: 80px;
+    height: 80px;
+}
+
+video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

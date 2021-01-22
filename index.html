@@ -23,9 +23,9 @@
                 <a href="https://e2huynh.github.io" style="font-size: 20px;">My Markdown page</a>
                 <br>
                 <iframe src="https://e2huynh.github.io" title="Markdown Page Preview"></iframe>
-                <h1>BIG HEADER</h1>
-                <h2>Medium Header</h2>
-                <h3>small header</h3>
+                <h1 class="header">BIG HEADER</h1>
+                <h2 class="header">Medium Header</h2>
+                <h3 class="header">small header</h3>
                 <nav>
                     <a href="#CODE">Code Section</a> |
                     <a href="#PIZZA">Pizza Section</a> |
@@ -174,14 +174,17 @@ void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; sy
                 }
             </script>
             <template>
-                <h2>START JAMMING</h2>
-                <picture>
-                    <img src="images/catjam.gif" height="80" width="80" alt="catJAM">
-                </picture>
-                <br><video width="1280" height="720" controls>
-                    <source src="videos/dance.mp4" type="video/mp4">
-                </video>
-                <br><button type="button" onclick="location.href='https://e2huynh.github.io/e2huynh-html'">Go Back</button>
+                <section id="JAM">
+                    <h2 class="header">START JAMMING</h2>
+                    <picture>
+                        <img id="CAT" src="images/catjam.gif" alt="catJAM">
+                    </picture>
+                    <br><video id="DANCE" width="1280" height="720" controls>
+                        <source src="videos/dance.mp4" type="video/mp4">
+                    </video>
+                    <br><button type="button" onclick="location.href='https://e2huynh.github.io/e2huynh-html'">Go Back</button>
+                </section>
+                
             </template>
             <hr>
         </section>
