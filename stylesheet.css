@@ -1,8 +1,9 @@
 /*Ethan Huynh's css stylesheet for CSE 110 WI2020 Lab 3*/
 
-/*Define the height of the entire page*/
+/*Define the height of the entire page and the font*/
 html {
     height: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 * {
@@ -21,6 +22,16 @@ nav {
     font-weight: bolder;
 }
 
+h3.header {
+    font-size: 10px;
+    font-style: oblique;
+}
+
+hr ~ h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
 /*Make the headers obnoxious*/
 .header {
     text-align: center;
@@ -28,13 +39,34 @@ nav {
     text-decoration: underline;
 }
 
-/*Make buttons have green text, white bg and be centered*/
+/*Center table*/
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Make all the imgs inside the table the same height*/
+table img {
+    height: 300px;
+}
+
+/*Make all p tags in aside be centered and lighter*/
+aside > p {
+    font-weight: lighter;
+    text-align: center;
+    font-size: 16px;
+}
+
+hr + p {
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+/*Make buttons have green text and white bg*/
 button {
     color: hsl(154, 100%, 50%);
     background-color: rgb(235, 235, 235);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /*Make buttons bigger when you hover over them*/
@@ -55,15 +87,8 @@ button:hover {
     height: 80px;
 }
 
-/*Center videos*/
-video {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/*Center images*/
-img {
+/*Center videos, imgs, buttons, and audio*/
+video, img, button, audio {
     display: block;
     margin-left: auto;
     margin-right: auto;
