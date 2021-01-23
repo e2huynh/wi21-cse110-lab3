@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang = en>
+    <head>
+        <title>GitHub HTML Page</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="HTML, Ethan Huynh, GitHub">
+        <meta name="author" content="Ethan Huynh">
+        <link rel="stylesheet" href="empty.css">
+    </head>
+
+    <body>
+        <main>
+            <header>
+                <a href="https://e2huynh.github.io">My Markdown page</a>
+                <br>
+                <iframe src="https://e2huynh.github.io" title="Markdown Page Preview"></iframe>
+                <h1>BIG HEADER</h1>
+                <h2>Medium Header</h2>
+                <h3>small header</h3>
+                <nav>
+                    <a href="#CODE">Code Section</a> |
+                    <a href="#PIZZA">Pizza Section</a> |
+                    <a href="#CATJAM">Jamming Section</a> |
+                    <a href="#SHAPES">Shapes Section</a> |
+                    <a href="#FORM">How was your experience?</a>
+                </nav>
+                
+            </header>
+        </main>
+        
+        <section id="CODE">
+            <h3><span>This section is the code section</span></h3>
+            <pre>
+                <code>
+void HCTree::build(vector&lt;unsigned char&gt;& rep, unordered_set&lt;int&gt; symbolIndex) {
+    queue&lt;int&gt; q; //q and nodes are parallel queues
+    queue&lt;HCNode*&gt; nodes;
+    root = new HCNode();
+    root -&gt; symbol = rep[1];
+    q.push(1);
+    nodes.push(root);
+
+    //construct the tree in a level-order traversal
+    while(!q.empty()) {
+        int index = q.front();
+        HCNode* temp = nodes.front();
+        q.pop();
+        nodes.pop();
+
+        //if an actual symbol
+        if(symbolIndex.count(index))
+            leaves[rep[index]] = temp;
+
+        if(index * 2 &lt; rep.size()) {
+            temp -&gt; c0 = new HCNode();
+            temp -&gt; c0 -&gt; symbol = rep[index*2];
+            temp -&gt; c0 -&gt; p = temp;
+
+            q.push(index*2);
+            nodes.push(temp -&gt; c0);
+        }
+
+        if(index*2 + 1 &lt; rep.size()) {
+            temp -&gt; c1 = new HCNode();
+            temp -&gt; c1 -&gt; symbol = rep[index*2 + 1];
+            temp -&gt; c1 -&gt; p = temp;
+
+            q.push(index*2 + 1);
+            nodes.push(temp -&gt; c1);
+        }
+    }
+    
+    //load the huffman code for each leaf
+    for(HCNode* l : leaves) {
+        if(l) {
+            string binaryCode = "";
+            HCNode* curr = l -&gt; p;
+            HCNode* prev = l;
+
+            while(curr) {
+                //if prev is the right child of curr
+                if(curr -&gt; c1 == prev)
+                    binaryCode = "1" + binaryCode;
+                else
+                    binaryCode = "0" + binaryCode;
+
+                prev = curr;
+                curr = curr -&gt; p;
+            }
+
+            binaryMap[binaryCode] = l -&gt; symbol; //use map for decoding because we search for encodings a lot
+        }
+    }
+}
+                
+                </code>
+            </pre>
+        </section>
+
+        <div>
+            <hr>
+            <h1>This seperates the code and the pizza section</h1>
+            <hr>
+        </div>
+
+        <section id="PIZZA">
+            <h3><span>This section is the pizza section</span></h3>
+
+            <p><em>Note: This is my opinion</em></p>
+
+            <p>Good pizza toppings</p>
+            <ul>
+                <li>Jalapenos</li>
+                <li>Pepperoni</li>
+                <li>Bacon</li>
+            </ul>
+            
+            <table>
+                <caption>For reference:</caption>
+                <colgroup>
+                    <col span="3">
+                </colgroup>
+                <tr>
+                    <th>Jalapeno</th>
+                    <th>Pepperoni</th>
+                    <th>Bacon</th>
+                </tr>
+                <tr>
+                    <td><img src="images/jalapeno.jpg" alt="Jalapeno"></td>
+                    <td><img src="images/pepperoni.jpg" alt="Pepperoni"></td>
+                    <td><img src="images/bacon.jpg" alt="Bacon"></td>
+                </tr>
+            </table>
+            
+
+            <p>Best pizza places</p>
+            <ol start="1">
+                <li><strong>Costco</strong></li>
+                <li>Dominoes</li>
+                <li>Pizza Hut</li>
+            </ol>
+
+            <p>Costco pizza:</p>
+            <figure>
+                <img src="images/costco_pizza.jpg" alt="Costco Pizza">
+                <figcaption><b>WOW LOOK AT THAT PIZZA</b></figcaption>
+            </figure>
+            
+            <details>
+                <summary>Quick notes</summary>
+                <aside>
+                    <p><i>Aside #1: I hate pineapples on pizza but I like pineapples by themselves</i></p>
+                    <p><i>Aside #2: Kirkland Signature water, Costco's brand of water, is my favorite beverage</i></p>
+                </aside>
+            </details>
+        </section>
+
+        <section id="CATJAM">
+            <hr>
+            <br><button type="button" onclick="show()">???</button>
+            <script>
+                function show() {
+                    alert('catJAM');
+                    var temp = document.getElementsByTagName("template")[0];
+                    var cont = temp.content.cloneNode(true);
+                    document.body.replaceWith(cont);
+                }
+            </script>
+            <template>
+                <h2>START JAMMING</h2>
+                <picture>
+                    <img src="images/catjam.gif" height="80" width="80" alt="catJAM">
+                </picture>
+                <br><video width="1280" height="720" controls>
+                    <source src="videos/dance.mp4" type="video/mp4">
+                </video>
+                <br><button type="button" onclick="location.href='https://e2huynh.github.io/e2huynh-html'">Go Back</button>
+            </template>
+            <hr>
+        </section>
+
+        <audio controls>
+            <source src="audio/surprise.mp3" type="audio/mp3">
+        </audio>
+
+        <hr>
+        <section id="SHAPES">
+            <h2>Shapes section</h2>
+            <canvas id="rectangle"></canvas>
+            <script>
+                var can = document.getElementById("rectangle");
+                var canvas = can.getContext("2d");
+                canvas.fillStyle = "#000000";
+                canvas.fillRect(0,0,80,80);
+            </script>
+            <svg width="100" height="100">
+                <circle cx="25" cy="25" r="23" stroke="black" stroke-width="2" fill="red"/>
+            </svg>
+        </section>
+        
+        <hr>
+
+        <section id="FORM">
+            <h2>Tell us your experience on this website:</h2>
+            <form>
+                <fieldset>
+                    <legend>Not going to sell your information</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="ssn">Social Security #:</label>
+                    <input type="password" id="ssn" name="ssn">
+                    <label for="mom">Mother's credit card #:</label>
+                    <input type="text" id="mom" name="mom">
+                    <label for="expdate">Expiration Date:</label>
+                    <input type="month" id="expdate" name="expdate">
+                    <label for="cvs">Security Code:</label>
+                    <input type="password" id="cvs" name="cvs">
+                    <br><label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <label for="birthdate">Birth Date:</label>
+                    <input type="date" id="birthdate" name="birthdate">
+                    <label for="license">Driver's License:</label>
+                    <input type="file" id="license" name="license">
+                    <label for="telephone">Telephone number:</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="123-456-6789">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                    <input type="button" value="Please press me" onclick="msg()">
+                    <script>
+                        function msg() {
+                          alert("Downloading adware!");
+                        }
+                    </script>
+                    <br><br>
+                    <label for="feel">I feel... </label>
+                    <select id="feel">
+                        <optgroup label="Feelings">
+                            <option value="happy">Happy</option>
+                            <option value="enraged">Enraged</option>
+                            <option value="disappointed">Disappointed</option>
+                        </optgroup>
+                        <optgroup label="Food?">
+                            <option value="jalapeno">like a Jalapeno</option>
+                            <option value="pepperoni">like a Pepperoni</option>
+                            <option value="bacon">like a strip of Bacon</option>
+                        </optgroup>
+                    </select>
+
+                    <br><br><label for="pizzathesis">Please present your thesis on the best pizza place: </label>
+                    <br><textarea id="pizzathesis" name="pizzathesis" rows="3" cols="100"></textarea>
+                    <br><label for="school">Choose where to send your thesis: </label>
+                    <input list="schools" name="school" id="school">
+                    <datalist id="schools">
+                        <option value="UCSD">
+                        <option value="Stanford">
+                        <option value="Harvard">
+                        <option value="Cal-Tech">
+                        <option value="MIT">
+                    </datalist>
+
+                    <br><br><br><input type="submit" value="Submit">
+                </fieldset>
+            </form>
+            
+        </section>
+        <footer>
+            <p>Contact me:<br><a href="mailto:e2huynh@ucsd.edu">e2huynh@ucsd.edu</a></p>
+        </footer>
+    </body>
+</html>
