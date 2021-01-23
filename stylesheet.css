@@ -1,9 +1,11 @@
 /*Ethan Huynh's css stylesheet for CSE 110 WI2020 Lab 3*/
 
-/*Define the height of the entire page and the font*/
+/*Define the height of the entire page and the font and shift the whole page down 50px*/
 html {
     height: 100%;
     font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    top: 50px;
 }
 
 * {
@@ -27,6 +29,8 @@ nav {
     text-align: center;
     font-size: 36px;
     font-weight: bolder;
+    position: fixed;
+    top: 0;
 }
 
 h3.header {
@@ -97,6 +101,14 @@ label,input {
     padding-right: 2px;
     padding-bottom: 5px;
 }
+
+#FORM {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+}
+
 /*Make secret area all black*/
 #JAM {
     background-color: rgba(0, 0, 0, 1);
@@ -112,6 +124,7 @@ label,input {
 
 #CODE h2,code,pre{
     background-color: rgb(240, 240, 240);
+    max-width: 48%;
 }
 
 /*Center videos, imgs, buttons, and audio*/
