@@ -15,6 +15,13 @@ a[target=highlight] {
     background-color: yellow;
 }
 
+section {
+    border-style: dotted;
+    border-color: rgb(31, 31, 31);
+    border-width: 10%;
+    border-radius: 15px;
+}
+
 /*Center the main navigation*/
 nav {
     text-align: center;
@@ -40,7 +47,8 @@ hr ~ h1 {
 }
 
 /*Center table*/
-table {
+table,tr,td {
+    border-style: double;
     margin-left: auto;
     margin-right: auto;
 }
@@ -48,6 +56,10 @@ table {
 /*Make all the imgs inside the table the same height*/
 table img {
     height: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 /*Make all p tags in aside be centered and lighter*/
@@ -74,6 +86,17 @@ button:hover {
     transform: scale(1.2);
 }
 
+/*Make buttons smaller when you click over them*/
+button:active {
+    transform: scale(0.8);
+}
+
+label,input {
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 2px;
+    padding-bottom: 5px;
+}
 /*Make secret area all black*/
 #JAM {
     background-color: rgba(0, 0, 0, 1);
@@ -87,9 +110,17 @@ button:hover {
     height: 80px;
 }
 
+#CODE h2,code,pre{
+    background-color: rgb(240, 240, 240);
+}
+
 /*Center videos, imgs, buttons, and audio*/
 video, img, button, audio {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+audio {
+    min-width: 100%;
 }
