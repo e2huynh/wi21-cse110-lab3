@@ -8,6 +8,13 @@ html {
     top: 50px;
 }
 
+/*Change the font to Courier if the browser shrinks to 600px wide*/
+@media only screen and (max-width: 600px) {
+    html {
+        font-family:'Courier New', Courier, monospace;
+    }
+}
+
 * {
     background-color: rgb(214, 203, 203);
 }
@@ -17,6 +24,7 @@ a[target=highlight] {
     background-color: yellow;
 }
 
+/*Add dotted borders to each section*/
 section {
     border-style: dotted;
     border-color: rgb(31, 31, 31);
@@ -24,7 +32,7 @@ section {
     border-radius: 15px;
 }
 
-/*Center the main navigation*/
+/*Center the main navigation and make it fixed at the top*/
 nav {
     text-align: center;
     font-size: 36px;
@@ -102,11 +110,19 @@ label,input {
     padding-bottom: 5px;
 }
 
+/* Center and wrap the form*/
 #FORM {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: stretch;
+}
+
+#TABLEPIZZA {
+    display: grid;
+    grid-template-rows: 8px 15px auto;
+    justify-items: center;
+    align-items: end;
 }
 
 /*Make secret area all black*/
